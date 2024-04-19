@@ -11,6 +11,6 @@ $ pip install -r requirements.txt
 ## Run
 
 ```bash
-$ python transcribe.py
+$ python transcribe.py 1462-170142-0000.flac
 The last two days of the voyage Bartley found almost intolerable.
 ```

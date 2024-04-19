@@ -1,9 +1,18 @@
 import whisper
-
-model = whisper.load_model("large")
+import sys
 
 def transcribe(audio_path):
     result = model.transcribe(audio_path)
     return result['text']
 
-print(transcribe("1462-170142-0000.flac"))
+# Check if an audio filename was provided
+if len(sys.argv) < 2:
+    print("Usage: python transcribe.py <audio_file>")
+    sys.exit(1)
+
+model = whisper.load_model("large")
+
+# Get the audio filename from the command line
+audio_file = sys.argv[1]
+
+print(transcribe(audio_file))
